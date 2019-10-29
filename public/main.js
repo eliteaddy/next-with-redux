@@ -1,10 +1,10 @@
 if ('serviceWorker' in navigator) {
 	navigator.serviceWorker
-		.unregister('/sw.js')
+		.register('/sw.js')
 		.then(function(registration){
 			// alert('Registered');
 			// Registration was successful
-			console.log(registration);
+			console.log("registered");
 		})
 		.catch(function(err){
 			// registration failed :(

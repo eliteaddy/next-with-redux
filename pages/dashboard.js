@@ -4,7 +4,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import Router from 'next/router';
 import { setTitle } from '../redux/actions/titleAction';
-import { getUser, getCookie } from '../redux/actions/authActions';
+import { getUser, getCookie, url } from '../redux/actions/authActions';
 
 class Dashboard extends Component {
 	state = {
@@ -14,7 +14,7 @@ class Dashboard extends Component {
 
 	componentDidMount() {
 		axios
-			.get(`http://localhost:5000/users/api`, {
+			.get(`${url}/users/api`, {
 				headers: {
 					Accept: 'application/json',
 					'Content-Type': 'application/json',

@@ -4,8 +4,10 @@ import Router from 'next/router';
 import fetch from 'isomorphic-unfetch';
 import { AUTHENTICATE, DEAUTHENTICATE, REGISTER, USERINFO } from '../actionTypes';
 
+export const url = `https://authapi-backend.glitch.me`;
+
 export const authenticate = (user) => (dispatch) =>
-	fetch(`http://localhost:5000/users/api`, {
+	fetch(`${url}/users/api`, {
 		method: 'POST',
 		headers: {
 			Accept: 'application/json',
@@ -32,7 +34,7 @@ export const deauthenticate = () => {
 
 export const register = (user) => (dispatch) => {
 	// console.log(user);
-	fetch(`http://localhost:5000/users/api`, {
+	fetch(`${url}/users/api`, {
 		method: 'PUT',
 		headers: {
 			Accept: 'application/json',
@@ -51,7 +53,8 @@ export const register = (user) => (dispatch) => {
 };
 
 export const getUser = (token) => (dispatch) => {
-	fetch(`http://localhost:5000/users/api`, {
+  if(!token) return null
+	fetch(`${url}/users/api`, {
 		method: 'GET',
 		headers: {
 			Accept: 'application/json',

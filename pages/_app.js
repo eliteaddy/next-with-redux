@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStore } from '../redux';
 import { Provider } from 'react-redux';
-import { getCookie } from '../redux/actions/authActions';
+import { getCookie, url } from '../redux/actions/authActions';
 // import App, { Container } from 'next/app';
 import axios from 'axios';
 import withRedux from 'next-redux-wrapper';
@@ -24,7 +24,7 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
 	ctx.store.dispatch({ type: 'API', payload: 'api' });
 	const token = getCookie('token', ctx.req);
 	axios
-		.get(`http://localhost:5000/users/api`, {
+		.get(`${url}/users/api`, {
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json',
