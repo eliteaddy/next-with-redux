@@ -1,0 +1,12 @@
+{
+  "name": "nextwithredux",
+  "version": 2,
+  "routes": [
+  ],
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@now/node-server"
+    }
+  ]
+}

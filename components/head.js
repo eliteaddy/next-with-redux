@@ -19,7 +19,7 @@ const Head = (props) => (
 		<link rel="icon" href="/images/favicon.png" />
 		<meta name="theme-color" content="#ffffffdb" />
 		<meta property="og:url" content={props.url || defaultOGURL} />
-		<meta property="og:title" content={`${props.title} - ${props.brandname}` || 'Authentication App'} />
+		<meta property="og:title" content={`${props.title} ` || 'Authentication App'} />
 		<meta property="og:description" content={props.description || defaultDescription} />
 		<link rel="stylesheet" href="/main.css" />
 		<link rel="manifest" href="/manifest.json" />
